@@ -1,0 +1,17 @@
+{
+    "name": "donnyha/golden-boy-brewing-company",
+    "autoload": {
+        "psr-4": {
+            "Donnyha\\GoldenBoyBrewingCompany\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "donnyha",
+            "email": "donny.dh.ha@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

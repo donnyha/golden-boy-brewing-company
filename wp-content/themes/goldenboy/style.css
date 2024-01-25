@@ -1,0 +1,599 @@
+/*
+Theme Name: Golden Boy Theme
+Text Domain: Golden Boy Theme
+Version: 1.0
+Description: Custom theme created for Golden Boy Brewery Company
+Tags: responsive, brewery
+Author: Donny Ha
+Author URI: https://github.com/donnyha
+*/ 
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  color: #000;
+  text-align: center;
+  font-family: "Inter", Arial, Helvetica, sans-serif !important;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto Slab' !important;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation */
+nav#nav-desktop {
+  display: flex;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  height: 10rem;
+  width: 100%;
+  transition: top 0.3s;
+
+  background-color: #fff;
+  font-size: 20px;
+  z-index: 1;
+}
+
+nav#nav-desktop div.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 100%;
+}
+
+nav#nav-desktop div.logo img {
+  margin-left: 10%;
+  max-width: 30%;
+}
+
+nav#nav-desktop ul.nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  list-style-type: none;
+  margin-right: 10%;
+}
+
+nav#nav-desktop ul.nav-links li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+nav#nav-desktop ul.nav-links li.nav-item a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 2rem;
+}
+
+nav#nav-desktop ul.nav-links li.nav-item a:after {
+  opacity: 1;
+  transform: translate3d(0%, 0, 0);
+}
+
+nav#nav-desktop ul.nav-links li.nav-item a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+nav#nav-desktop ul.nav-links li.nav-item a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+#hamburger-menu {
+  display: none;
+  min-height: 100%;
+  min-width: 40%;
+}
+
+/* NAVIGATION MOBILE */
+@media screen and (max-width: 768px) {
+  nav#nav-desktop {
+    display: none;
+  }
+
+  #nav-mobile {
+    display: none;
+    position: absolute;
+    right: 0%;
+    width: 80%;
+    height: 100vh;
+    background-color: #fff;
+  }
+
+  #nav-mobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    list-style: none;
+    text-align: right;
+    padding: 1rem;
+    height: auto;
+    margin-top: 190px;
+  }
+
+  #nav-mobile div.logo {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+  }
+
+  #nav-mobile div.logo img {
+    height: 4rem;
+  }
+
+  #nav-mobile ul li {
+    margin-bottom: 2rem;
+  }
+
+  #nav-mobile ul li a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  input#toggle:checked + label + nav#nav-mobile {
+    display: block;
+  }
+
+  input#toggle:checked ~ label ~ #hamburger-menu {
+    background-color: #fff;
+  }
+
+  #hamburger-menu {
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  #toggle {
+    display: none;
+  }
+  
+  label {
+    display: block;
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    right: 0%;
+    margin: 1rem;
+    z-index: 1;
+  }
+  
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  span:first-child {
+    top: 0;
+  }
+  
+  span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  span:last-child {
+    bottom: 0;
+  }
+  
+  #toggle:checked + label span:first-child {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  
+  #toggle:checked + label span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #toggle:checked + label span:last-child {
+    transform: rotate(-45deg) translate(10px, -10px);
+  }
+}
+
+/* HOME PAGE */
+h1#home-header {
+  font-size: 7rem;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.black-btn {
+  min-width: 7rem;
+  min-height: 2rem;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  transition-duration: 0.4s;
+}
+
+.black-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Paralex 1 */
+.parallax {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+div#para1.parallax {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Concert One";
+}
+
+.heading {
+  color: #fff;
+  font-size: 3vw;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-shadow: 0 0 10px #000;
+}
+
+/* Parrallax 2 */
+div#para2 {
+  height: auto;
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+div#para2 div.flex-row {
+  justify-content: center;
+}
+
+div#para2 div.flex-row .black-btn {
+  margin: 1rem;
+}
+
+/* Parrallax 3 */
+
+/* Parrallax 4 */
+div#para4 {
+  height: auto;
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+div#para4 div#beer-and-events {
+  min-height: 20%;
+  justify-content: space-evenly;
+}
+
+div#para4 div#beer-and-events a {
+  min-width: 45%;
+  min-height: 45%;
+  text-decoration: none;
+}
+
+div#para4 div#beer-and-events div#go-beer {
+  padding: 35%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div#para4 div#beer-and-events div#go-events {
+  padding: 35%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div#para4 div#about-us {
+  padding: 4%;
+}
+
+div#para4 div#about-us h2 {
+  text-align: left;
+}
+
+div#para4 div#about-us p {
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  h1#home-header {
+    font-size: 3rem;
+  }
+}
+
+/* BEER PAGE */
+div.title-container {
+  background-color: #212121;
+  color: #fff;
+  min-height: 20%;
+  text-align: left;
+  margin-top: 10rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.title-container h1 {
+  margin-left: 3rem;
+}
+
+div.top-image-container {
+  min-width: 100%;
+  height: 50vh;
+}
+
+div.mx-15 {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+div.call-to-action-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.call-to-action-container p {
+  margin-top: 5rem;
+}
+
+div#beer-call-to-action a.black-btn{
+  margin: 2rem;
+}
+
+div.content-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+}
+
+div.content-container div.content-item {
+  padding: 2rem;
+}
+
+div.content-container div.content-item div.content-image {
+  background-size: cover;
+  height: 10rem;
+}
+
+div.bottom-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 65%;
+}
+
+div.bottom-image-container a.black-btn {
+  margin: 3rem;
+}
+
+@media (max-width: 768px) {
+  div.content-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  div.title-container {
+    margin-top: 0;
+    min-height: 30vh;
+  }
+}
+
+@media (max-width: 480px) {
+  div.content-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* EVENT PAGE */
+div.content-container-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2fr 1fr));
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  height: 40rem;
+}
+
+div.content-container-gallery-text div.gallery-item {
+  background-size: cover;
+  background-position: center;
+  height: auto;
+}
+
+div.content-container-gallery div#gallery-item-c.gallery-item {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+}
+
+/* ABOUS US PAGE */
+div.content-container-gallery-text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 0 !important;
+  height: 100%;
+}
+
+div.content-container-gallery-text div.gallery-item-text {
+  color: #fff;
+  background-color: #000;
+  text-align: left;
+  padding: 3rem;
+}
+
+div#bottom-content-about-us{
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mb-5 {
+  margin-bottom: 5rem;
+}
+
+.flex-space-evenly {
+  justify-content: space-evenly;
+}
+
+/* TAPROOM PAGE */
+div#taproom-cta {
+  margin-top: 5rem;
+}
+
+/* CONTACT US PAGE */
+
+/* CAREERS PAGE */
+div#careers-content {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+div#careers-content h2 {
+  margin-bottom: 3rem;
+}
+
+div#contact-form {
+  text-align: left;
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
+
+/* Footer */
+footer {
+  min-width: 100%;
+  height: auto;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  text-align: left;
+}
+
+footer img#footer-logo {
+  max-width: 5%;
+  margin-left: 18%;
+}
+
+footer div#footer-container {
+  justify-content: space-evenly;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 1rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  footer img#footer-logo {
+    display: none;
+  }
+
+  footer div#footer-container div#contact-info,
+  footer div#footer-container div#hour-info {
+    display: none;
+  }
+
+  footer div#footer-container div#links-info {
+    text-align: center;
+  }
+
+  footer div#footer-container div#links-info ul {
+    padding: 0;
+  }
+}.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #04AA6D; /* Green */
+  color: white;
+}
