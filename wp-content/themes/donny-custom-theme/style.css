@@ -193,3 +193,35 @@ div#para4 div#about-us h2 {
 div#para4 div#about-us p {
   text-align: left;
 }
+
+/* Footer */
+footer {
+  min-width: 100%;
+  height: auto;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  text-align: left;
+}
+
+footer img#footer-logo {
+  max-width: 5%;
+  margin-left: 15%;
+}
+
+footer div#footer-container {
+  justify-content: space-evenly;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer ul li {
+  margin-bottom: 1rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #fff;
+}
