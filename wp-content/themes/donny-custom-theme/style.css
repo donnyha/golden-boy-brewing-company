@@ -67,18 +67,19 @@ nav#nav-mobile {
   flex-direction: row;
 }
 
-div.black-btn {
+.black-btn {
   min-width: 7rem;
   min-height: 2rem;
   background-color: #000;
   border-radius: 3px;
+  text-decoration: none;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-div.black-btn span.text {
+.black-btn .text {
   text-align: center;
   color: #fff;
   font-size: 15px;
@@ -132,13 +133,11 @@ div#para2 div.flex-row {
   justify-content: center;
 }
 
-div#para2 div.flex-row div.black-btn {
+div#para2 div.flex-row .black-btn {
   margin: 1rem;
 }
 
-/* Parrallax 3 */min-width: 45%;
-  min-height: 45%;
-  
+/* Parrallax 3 */
 div#para3 {
   background-image: url(assets/images/bar.jpg);
   min-height: 100%;
