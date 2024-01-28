@@ -60,15 +60,14 @@ nav#nav-mobile {
   display: none;
 }
 
-/* Home Page */
-
+/* HOME PAGE */
 .flex-row {
   display: flex;
   flex-direction: row;
 }
 
 .black-btn {
-  min-width: 7rem;
+  width: 7rem;
   min-height: 2rem;
   background-color: #000;
   border-radius: 3px;
@@ -192,6 +191,85 @@ div#para4 div#about-us h2 {
 
 div#para4 div#about-us p {
   text-align: left;
+}
+
+/* BEER PAGE */
+div.title-container {
+  background-color: #212121;
+  color: #fff;
+  min-height: 20%;
+  text-align: left;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.title-container h1 {
+  margin-left: 3rem;
+}
+
+div.top-image-container {
+  min-width: 100%;
+  min-height: 50%;
+}
+
+div#beer-top-image-container {
+  background-image: url(./assets/images/beer-page-top.png);
+}
+
+div.mx-15 {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+div.call-to-action-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.call-to-action-container p {
+  margin-top: 5rem;
+}
+
+div#beer-call-to-action a.black-btn{
+  width: 7rem;
+  margin: 2rem;
+}
+
+div.content-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 10px;
+}
+
+div.content-container div.content-item {
+  padding: 2rem;
+}
+
+div.content-container div.content-item div.content-image {
+  background-image: url(./assets/images/beer-can.jpg);
+  background-size: cover;
+  height: 10rem;
+}
+
+div.bottom-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  
+  background-image: url('./assets/images/bar.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 65%;
+}
+
+div.bottom-image-container a.black-btn {
+  margin: 3rem;
 }
 
 /* Footer */
