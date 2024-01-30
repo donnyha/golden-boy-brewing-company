@@ -235,7 +235,6 @@ div.content-container div.content-item {
 }
 
 div.content-container div.content-item div.content-image {
-  background-image: url(./assets/images/beer-can.jpg);
   background-size: cover;
   height: 10rem;
 }

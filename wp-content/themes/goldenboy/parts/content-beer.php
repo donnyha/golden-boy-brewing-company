@@ -30,49 +30,41 @@
       </div>
 
       <div class="content-container">
+      <?php
+        $category_slug = 'beer';
+        $args = array('category_name' => $category_slug);
+        $beer_posts_query = new WP_Query( $args );
+
+        if ( $beer_posts_query->have_posts() ) :
+          while ( $beer_posts_query->have_posts() ) : $beer_posts_query->the_post();
+      ?>
         <div class="content-item">
-          <div class="content-image"></div>
+        <?php
+          $image = get_field('beer_image');
+          if (!empty($image)) :
+        ?>
+          <div 
+            class="content-image" 
+            style="background-image: url(<?= esc_url($image['url']); ?>);"
+          ></div>
+        <?php else : ?>
+          <div 
+            class="content-image" 
+            style="background-image: url('<?= get_template_directory_uri(); ?>/assets/images/beer-can.jpg');"
+          ></div>
+        <?php endif; ?>
           <div class="content-description">
-            <p>Brewery Pale Ale</p>
-            <p>$5.99</p>
+            <p><?= esc_html( get_field('beer_name') ); ?></p>
+            <p><?= esc_html( get_field('beer_price') ); ?></p>
           </div>
         </div>
-        <div class="content-item">
-          <div class="content-image"></div>
-          <div class="content-description">
-            <p>Brewery Pale Ale</p>
-            <p>$5.99</p>
-          </div>
-        </div>
-        <div class="content-item">
-          <div class="content-image"></div>
-          <div class="content-description">
-            <p>Brewery Pale Ale</p>
-            <p>$5.99</p>
-          </div>
-        </div>
-        <div class="content-item">
-          <div class="content-image"></div>
-          <div class="content-description">
-            <p>Brewery Pale Ale</p>
-            <p>$5.99</p>
-          </div>
-        </div>
-        <div class="content-item">
-          <div class="content-image"></div>
-          <div class="content-description">
-            <p>Brewery Pale Ale</p>
-            <p>$5.99</p>
-          </div>
-        </div>
-        <div class="content-item">
-          <div class="content-image"></div>
-          <div class="content-description">
-            <p>Brewery Pale Ale</p>
-            <p>$5.99</p>
-          </div>
-        </div>
+      <?php 
+          endwhile;
+        endif; 
+        wp_reset_postdata();
+      ?>
       </div>
+
     </div>
 
     <?php
