@@ -1,76 +1,125 @@
     <!-- Parallax 1 -->
-    <div id="para1" class="parallax">
+    <?php
+      $image = get_field('parrallax_image_1');
+      if (!empty($image)) :
+    ?>
+    <div 
+      id="para1" 
+      class="parallax" 
+      style="
+        background-image: url(<?= esc_url($image['url']); ?>); 
+        min-height: 100%;
+      "
+    >
+    <?php
+       else :
+    ?>
+    <div 
+      id="para1" 
+      class="parallax" 
+      style="
+        background-image: url('<?= get_template_directory_uri(); ?>/assets/images/beer-board.jpg'); 
+        min-height: 100%;
+      "
+    >
+    <?php endif ?>
       <div class="heading">
-        <h1>
-          <?php
-            $brewery_name = get_post_meta(
-              get_the_ID(), 
-              'brewery_name', 
-              true
-            );
-
-            if ( empty( $brewery_name ) ) {
-              $brewery_name = 'Golden Boy Brewing Co.';
-            }
-
-            echo $brewery_name;
-          ?>
-        </h1>
+        <h1><?= esc_html( get_field('brewery_name') ); ?></h1>
       </div>
     </div>
 
     <!-- Parrallax 2 -->
     <div id="para2" class="parallax">
       <div>
-        <h2>Our Taproom</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
+        <h2><?= esc_html( get_field('text_section_1_title') ); ?></h2>
+        <p><?= esc_html( get_field('text_section_1_content') ); ?></p>
         <div class="flex-row">
           <a href="#" class="black-btn">
-            <span class="text">Menu</span>
+            <span class="text"><?= esc_html( get_field('text_section_1_button_left_text') ); ?></span>
           </a>
 
           <a href="#" class="black-btn">
-            <span class="text">Reservations</span>
+            <span class="text"><?= esc_html( get_field('text_section_1_button_right_text') ); ?></span>
           </a>
         </div>
       </div>
     </div>
 
     <!-- Parallax 3 -->
-    <div id="para3" class="parallax"></div>
+    <?php
+      $image = get_field('parrallax_image_2');
+      if (!empty($image)) :
+    ?>
+    <div 
+      id="para3" 
+      class="parallax"
+      style="
+        background-image: url(<?= esc_url($image['url']); ?>);
+        min-height: 100%;
+      "
+    ></div>
+    <?php
+       else :
+    ?>
+    <div 
+      id="para3" 
+      class="parallax"
+      style="
+        background-image: url('<?= get_template_directory_uri(); ?>/assets/images/bar.jpg');
+        min-height: 100%;
+      "
+    ></div>
+    <?php endif ?>
 
     <!-- Parrallax 4 -->
     <div id="para4" class="parallax">
       <div id="beer-and-events" class="flex-row">
         <a href="#">
-          <div id="go-beer">
+        <?php
+          $image = get_field('text_section_2_button_left_image');
+          if (!empty($image)) :
+        ?>
+          <div 
+            id="go-beer"
+            style="background-image: url(<?= esc_url($image['url']); ?>);"
+          >
+        <?php
+          else :
+        ?>
+        <div 
+            id="go-beer"
+            style="background-image: url(<?= get_template_directory_uri(); ?>/assets/images/our-beer.jpg);"
+          >
+        <?php endif ?>
             <div class="black-btn">
-              <span class="text">Our Beer</span>
+              <span class="text"><?= esc_html( get_field('text_section_2_button_left_text') ); ?></span>
             </div>
           </div>
         </a>
 
         <a href="#">
-          <div id="go-events">
-            <div class="black-btn"><span class="text">Events</span></div>
+          <?php
+            $image = get_field('text_section_2_button_right_image');
+            if (!empty($image)) :
+          ?>
+          <div 
+            id="go-events"
+            style="background-image: url(<?= esc_url($image['url']); ?>);"
+          >
+          <?php
+            else :
+          ?>
+          <div 
+            id="go-events"
+            style="background-image: url(<?= get_template_directory_uri(); ?>/assets/images/our-events.jpg);"
+          >
+          <?php endif ?>
+            <div class="black-btn"><span class="text"><?= esc_html( get_field('text_section_2_button_right_text') ); ?></span></div>
           </div>
         </a>
       </div>
       <div id="about-us">
-        <h2>About Us</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <h2><?= esc_html( get_field('text_section_2_title') ); ?></h2>
+        <p><?= esc_html( get_field('text_section_2_content') ); ?></p>
       </div>
     </div>

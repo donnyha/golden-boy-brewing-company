@@ -102,11 +102,6 @@ h1 {
   font-family: "Concert One";
 }
 
-div#para1 {
-  background-image: url(assets/images/beer-board.jpg);
-  min-height: 100%;
-}
-
 .heading {
   position: absolute;
   color: #fff;
@@ -137,10 +132,6 @@ div#para2 div.flex-row .black-btn {
 }
 
 /* Parrallax 3 */
-div#para3 {
-  background-image: url(assets/images/bar.jpg);
-  min-height: 100%;
-}
 
 /* Parrallax 4 */
 div#para4 {
@@ -164,7 +155,6 @@ div#para4 div#beer-and-events a {
 }
 
 div#para4 div#beer-and-events div#go-beer {
-  background-image: url(assets/images/our-beer.jpg);
   padding: 35%;
   background-position: center;
   background-size: cover;
@@ -173,7 +163,6 @@ div#para4 div#beer-and-events div#go-beer {
 }
 
 div#para4 div#beer-and-events div#go-events {
-  background-image: url(assets/images/our-events.jpg);
   padding: 35%;
   background-position: center;
   background-size: cover;
