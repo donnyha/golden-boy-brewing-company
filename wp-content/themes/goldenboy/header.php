@@ -28,13 +28,9 @@
         </div>
 
         <!-- Nav Items -->
-        <?php
-          $beerLink = get_permalink('beer');
-          print_r($beerLink);
-        ?>
         <ul class="nav-links">
           <li><a href="#" class="nav-item">Taproom</a></li>
-          <li><a href="<?= $beerLink ?>" class="nav-item">Beer</a></li>
+          <li><a href="#" class="nav-item">Beer</a></li>
           <li><a href="#" class="nav-item">Events</a></li>
           <li><a href="#" class="nav-item">About</a></li>
         </ul>

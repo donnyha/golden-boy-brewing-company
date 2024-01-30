@@ -1,6 +1,4 @@
-<?php get_header(); ?>
-
-<div class="title-container">
+    <div class="title-container">
       <h1>Our Beer</h1>
     </div>
 
@@ -75,5 +73,3 @@
       </div>
     </div>
   </body>
-
-<?php get_footer(); ?>
