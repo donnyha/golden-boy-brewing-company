@@ -24,7 +24,7 @@
     >
     <?php endif ?>
       <div class="heading">
-        <h1><?= esc_html( get_field('brewery_name') ); ?></h1>
+        <h1><?= esc_html( get_field('title') ); ?></h1>
       </div>
     </div>
 

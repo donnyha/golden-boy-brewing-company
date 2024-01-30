@@ -203,10 +203,6 @@ div.top-image-container {
   min-height: 50%;
 }
 
-div#beer-top-image-container {
-  background-image: url(./assets/images/beer-page-top.png);
-}
-
 div.mx-15 {
   margin-left: 15%;
   margin-right: 15%;
@@ -249,8 +245,7 @@ div.bottom-image-container {
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  
-  background-image: url('./assets/images/bar.jpg');
+
   background-size: cover;
   background-position: center;
   width: 100%;
