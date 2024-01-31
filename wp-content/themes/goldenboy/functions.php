@@ -12,6 +12,17 @@ function goldenboy_theme_support() {
 
 add_action('after_setup_theme', 'goldenboy_theme_support');
 
+function goldenboy_menus() {
+  $locations = array(
+    'primary' => 'Desktop Top',
+    'footer' => 'Footer Bottom'
+  );
+
+  register_nav_menus($locations);
+}
+
+add_action('init', 'goldenboy_menus');
+
 function goldenboy_register_styles() {
   $version = wp_get_theme()->get('Version');
 

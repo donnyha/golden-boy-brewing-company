@@ -13,7 +13,7 @@
       <div class="nav-container">
         <!-- Logo -->
         <div class="logo">
-          <a href="#">
+          <a href="<?= home_url(); ?>">
             <?php 
               if (function_exists('the_custom_logo')) {
                 $custom_logo_id = get_theme_mod('custom_logo');
@@ -28,22 +28,57 @@
         </div>
 
         <!-- Nav Items -->
-        <ul class="nav-links">
-          <li><a href="#" class="nav-item">Taproom</a></li>
-          <li><a href="#" class="nav-item">Beer</a></li>
-          <li><a href="#" class="nav-item">Events</a></li>
-          <li><a href="#" class="nav-item">About</a></li>
-        </ul>
+        <?php
+          wp_nav_menu(
+            array(
+              'menu' => 'primary',
+              'container' => '',
+              'theme_location' => 'primary',
+              'items_wrap' => '<ul class="nav-links">%3$s</ul>',
+            )
+          );
+        ?>
       </div>
     </nav>
 
+    
     <!-- Mobile Nav -->
-    <nav id="nav-mobile" class="nav">
-      <div class="logo">Brewery</div>
-      <ul class="nav-links">
-        <li><a href="#" class="nav-item">Taproom</a></li>
-        <li><a href="#" class="nav-item">Beer</a></li>
-        <li><a href="#" class="nav-item">Events</a></li>
-        <li><a href="#" class="nav-item">About</a></li>
-      </ul>
-    </nav>
+    <div id="hamburger-menu">
+      <input type="checkbox" id="toggle">
+      <label for="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+        
+      <nav id="nav-mobile" class="nav">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="<?= home_url(); ?>">
+            <?php 
+              if (function_exists('the_custom_logo')) {
+                $custom_logo_id = get_theme_mod('custom_logo');
+                $logo = wp_get_attachment_image_src($custom_logo_id)[0];
+              } else {
+                $templateDirectory = esc_url(get_template_directory_uri());
+                $logo = $templateDirectory . '/assets/images/logo.svg';
+              }
+            ?>
+            <img src="<?= $logo ?>" alt="Logo" />
+          </a>
+        </div>
+
+        <?php
+          wp_nav_menu(
+            array(
+              'menu' => 'primary',
+              'container' => '',
+              'theme_location' => 'primary',
+              'items_wrap' => '<ul class="nav-links">%3$s</ul>',
+            )
+          );
+        ?>
+      </nav>
+    </div>
+
+  </div>

@@ -30,10 +30,8 @@
         <p><?= wp_kses_post( get_field('middle_section_content') ); ?></p>
         <div class="mb-5"></div>
         <div class="center">
-          <a href="#" class="black-btn">
-            <span class="text">
-              <?= esc_html( get_field('call_to_action_button_text') ); ?>
-            </span>
+          <a href="<?= esc_url( get_field('call_to_action_button_link')['url'] ); ?>" class="black-btn">
+            <?= esc_html( get_field('call_to_action_button_text') ); ?>
           </a>
         </div>
       </div>

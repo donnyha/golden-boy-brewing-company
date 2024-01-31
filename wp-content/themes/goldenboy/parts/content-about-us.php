@@ -32,6 +32,7 @@
     <?php endif ?>
 
     <!-- Call to Action -->
+    <div class="flex-col">
     <div class="mx-15 mb-5">
       <div class="call-to-action-container">
         <p><?= esc_html( get_field('top_call_to_action_content') ); ?></p>
@@ -97,9 +98,10 @@
     <div id="bottom-content-about-us" class="mx-15">
       <div class="call-to-action-container">
         <p><?= esc_html( get_field('bottom_section_content') ); ?></p>
-        <a href="#" class="black-btn">
-          <span class="text"><?= esc_html( get_field('bottom_section_call_to_action_button_text') ); ?></span>
+        <a href="<?= esc_url( get_field('bottom_section_call_to_action_button_link')['url'] ); ?>" class="black-btn">
+          <?= esc_html( get_field('bottom_section_call_to_action_button_text') ); ?>
         </a>
       </div>
+    </div>
     </div>
   </body>
