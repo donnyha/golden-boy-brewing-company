@@ -9,7 +9,11 @@
     <div 
       id="beer-top-image-container" 
       class="top-image-container"
-      style="background-image: url(<?= esc_url($image['url']); ?>);"
+      style="
+        background-image: url(<?= esc_url($image['url']); ?>);
+        background-position: center;
+        background-size: cover;
+      "
     ></div>
     <?php
        else :
@@ -17,11 +21,15 @@
     <div 
       id="beer-top-image-container" 
       class="top-image-container"
-      style="background-image: url('<?= get_template_directory_uri(); ?>/assets/images/beer-page-top.png');"
+      style="
+        background-image: url('<?= get_template_directory_uri(); ?>/assets/images/events-header.jpg');
+        background-position: center;
+        background-size: cover;
+      "
     ></div>
     <?php endif ?>
 
-    <div class="mx-15">
+    <div class="mx-15 mb-5">
       <div id="beer-call-to-action" class="call-to-action-container">
         <p><?= esc_html( get_field('top_call_to_action_content') ); ?></p>
         <a href="#" class="black-btn">
@@ -38,7 +46,11 @@
         <div
           id="gallery-item-a" 
           class="gallery-item"
-          style="background-image: url(<?= esc_url($image['url']); ?>);"
+          style="
+            background-image: url(<?= esc_url($image['url']); ?>);
+            background-position: center;
+            background-size: cover;
+          "
         ></div>
         <?php
           else :
@@ -46,7 +58,11 @@
         <div
           id="gallery-item-a" 
           class="gallery-item"
-          style="background-image: url('<?= get_template_directory_uri(); ?>/assets/images/restaurant.jpg');"
+          style="
+            background-image: url('<?= get_template_directory_uri(); ?>/assets/images/restaurant.jpg');
+            background-position: center;
+            background-size: cover;
+          "
         ></div>
         <?php endif; ?>
 
@@ -58,7 +74,11 @@
         <div
           id="gallery-item-b" 
           class="gallery-item"
-          style="background-image: url(<?= esc_url($image['url']); ?>);"
+          style="
+            background-image: url(<?= esc_url($image['url']); ?>);
+            background-position: center;
+            background-size: cover;
+          "
         ></div>
         <?php
           else :
@@ -66,7 +86,11 @@
         <div
           id="gallery-item-b" 
           class="gallery-item"
-          style="background-image: url('<?= get_template_directory_uri(); ?>/assets/images/patio.jpg');"
+          style="
+            background-image: url('<?= get_template_directory_uri(); ?>/assets/images/patio.jpg');
+            background-position: center;
+            background-size: cover;  
+          "
         ></div>
         <?php endif; ?>
 
@@ -78,7 +102,11 @@
         <div 
           id="gallery-item-c"
           class="gallery-item"
-          style="background-image: url(<?= esc_url($image['url']); ?>);"
+          style="
+            background-image: url(<?= esc_url($image['url']); ?>);
+            background-position: center;
+            background-size: cover;
+          "
         ></div>
         <?php
           else :
@@ -86,7 +114,11 @@
         <div 
           id="gallery-item-c"
           class="gallery-item"
-          style="background-image: url('<?= get_template_directory_uri(); ?>/assets/images/our-events.jpg');"
+          style="
+            background-image: url('<?= get_template_directory_uri(); ?>/assets/images/our-events.jpg');
+            background-position: center;
+            background-size: cover;
+          "
         ></div>
         <?php endif; ?>
       </div>

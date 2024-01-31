@@ -262,16 +262,42 @@ div.content-container-gallery {
   grid-template-rows: auto auto;
   gap: 1rem;
   margin: 5rem;
+  height: 40rem;
 }
 
-div.content-container-gallery div.gallery-item {
+div.content-container-gallery-text div.gallery-item {
   background-size: cover;
-  height: 20rem;
+  background-position: center;
+  height: auto;
 }
 
 div.content-container-gallery div#gallery-item-c.gallery-item {
   grid-row: 2;
   grid-column: 1 / span 2;
+}
+
+/* ABOUS US PAGE */
+div.content-container-gallery-text {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 0 !important;
+  height: 100%;
+}
+
+div.content-container-gallery-text div.gallery-item-text {
+  color: #fff;
+  background-color: #000;
+  text-align: left;
+  padding: 3rem;
+}
+
+div#bottom-content-about-us{
+  margin-bottom: 5rem;
+}
+
+.mb-5 {
+  margin-bottom: 5rem;
 }
 
 /* Footer */
