@@ -24,8 +24,8 @@
     <div class="mx-15">
       <div id="beer-call-to-action" class="call-to-action-container">
         <p><?= esc_html( get_field('top_call_to_action_content') ); ?></p>
-        <a href="#" class="black-btn">
-          <span class="text"><?= esc_html( get_field('top_call_to_action_button_text') ); ?></span>
+        <a href="<?= esc_url( get_field('top_call_to_action_button_link')['url'] ); ?>" class="black-btn">
+          <?= esc_html( get_field('top_call_to_action_button_text') ); ?>
         </a>
       </div>
 
@@ -84,11 +84,11 @@
     >
     <?php endif ?>
       <div class="flex-row">
-        <a href="#" class="black-btn">
-          <span class="text"><?= esc_html( get_field('bottom_left_call_to_action_button_text') ); ?></span>
+        <a href="<?= esc_url( get_field('bottom_left_call_to_action_button_link')['url'] ); ?>" class="black-btn">
+          <?= esc_html( get_field('bottom_left_call_to_action_button_text') ); ?>
         </a>
-        <a href="#" class="black-btn">
-          <span class="text"><?= esc_html( get_field('bottom_right_call_to_action_button_text') ); ?></span>
+        <a href="<?= esc_url( get_field('bottom_right_call_to_action_button_link')['url'] ); ?>" class="black-btn">
+          <?= esc_html( get_field('bottom_right_call_to_action_button_text') ); ?>
         </a>
       </div>
     </div>

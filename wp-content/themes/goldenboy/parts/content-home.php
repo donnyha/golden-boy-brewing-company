@@ -34,12 +34,8 @@
         <h2><?= esc_html( get_field('text_section_1_title') ); ?></h2>
         <p><?= esc_html( get_field('text_section_1_content') ); ?></p>
         <div class="flex-row">
-          <a href="#" class="black-btn">
-            <span class="text"><?= esc_html( get_field('text_section_1_button_left_text') ); ?></span>
-          </a>
-
-          <a href="#" class="black-btn">
-            <span class="text"><?= esc_html( get_field('text_section_1_button_right_text') ); ?></span>
+          <a href="<?= esc_url( get_field('text_section_1_button_link')['url'] ); ?>" class="black-btn">
+            <?= esc_html( get_field('text_section_1_button_text') ); ?>
           </a>
         </div>
       </div>
@@ -74,7 +70,7 @@
     <!-- Parrallax 4 -->
     <div id="para4" class="parallax">
       <div id="beer-and-events" class="flex-row">
-        <a href="#">
+        <a href="<?= esc_url( get_field('text_section_2_button_left_link')['url'] ); ?>">
         <?php
           $image = get_field('text_section_2_button_left_image');
           if (!empty($image)) :
@@ -92,12 +88,12 @@
           >
         <?php endif ?>
             <div class="black-btn">
-              <span class="text"><?= esc_html( get_field('text_section_2_button_left_text') ); ?></span>
+              <?= esc_html( get_field('text_section_2_button_left_text') ); ?>
             </div>
           </div>
         </a>
 
-        <a href="#">
+        <a href="<?= esc_url( get_field('text_section_2_button_right_link')['url'] ); ?>">
           <?php
             $image = get_field('text_section_2_button_right_image');
             if (!empty($image)) :
@@ -114,7 +110,9 @@
             style="background-image: url(<?= get_template_directory_uri(); ?>/assets/images/our-events.jpg);"
           >
           <?php endif ?>
-            <div class="black-btn"><span class="text"><?= esc_html( get_field('text_section_2_button_right_text') ); ?></span></div>
+            <div class="black-btn">
+              <?= esc_html( get_field('text_section_2_button_right_text') ); ?>
+            </div>
           </div>
         </a>
       </div>

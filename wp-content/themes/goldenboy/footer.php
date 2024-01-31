@@ -22,12 +22,17 @@
           </ul>
         </div>
         <div id="links-info">
-          <ul>
-            <li><a href="#">Reserve</a></li>
-            <li><a href="#">Order</a></li>
-            <li><a href="#">Career</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
+          <!-- Nav Items -->
+          <?php
+            wp_nav_menu(
+              array(
+                'menu' => 'footer',
+                'container' => '',
+                'theme_location' => 'footer',
+                'items_wrap' => '<ul class="nav-links">%3$s</ul>',
+              )
+            );
+          ?>
         </div>
       </div>
     </footer>

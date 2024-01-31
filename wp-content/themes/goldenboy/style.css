@@ -54,14 +54,127 @@ nav#nav-desktop ul.nav-links {
   margin-right: 10%;
 }
 
-nav#nav-desktop ul.nav-links a.nav-item {
+nav#nav-desktop ul.nav-links li.nav-item a {
   text-decoration: none;
   color: #000;
-  padding: 2rem;
+  margin-right: 2rem;
 }
 
-nav#nav-mobile {
+#hamburger-menu {
   display: none;
+  min-height: 100%;
+  min-width: 40%;
+}
+
+/* NAVIGATION MOBILE */
+@media screen and (max-width: 768px) {
+  nav#nav-desktop {
+    display: none;
+  }
+
+  #nav-mobile {
+    display: none;
+    position: absolute;
+    right: 0%;
+    width: 80%;
+    height: 100vh;
+    background-color: #fff;
+  }
+
+  #nav-mobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    list-style: none;
+    text-align: right;
+    padding: 1rem;
+    height: auto;
+    margin-top: 190px;
+  }
+
+  #nav-mobile div.logo {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+  }
+
+  #nav-mobile div.logo img {
+    height: 4rem;
+  }
+
+  #nav-mobile ul li {
+    margin-bottom: 2rem;
+  }
+
+  #nav-mobile ul li a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  input#toggle:checked + label + nav#nav-mobile {
+    display: block;
+  }
+
+  input#toggle:checked ~ label ~ #hamburger-menu {
+    background-color: #fff;
+  }
+
+  #hamburger-menu {
+    position: absolute;
+    z-index: 1;
+    right: 0%;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  #toggle {
+    display: none;
+  }
+  
+  label {
+    display: block;
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    right: 0%;
+    margin: 1rem;
+    z-index: 1;
+  }
+  
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #333;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  span:first-child {
+    top: 0;
+  }
+  
+  span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  span:last-child {
+    bottom: 0;
+  }
+  
+  #toggle:checked + label span:first-child {
+    transform: rotate(45deg) translate(10px, 10px);
+  }
+  
+  #toggle:checked + label span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #toggle:checked + label span:last-child {
+    transform: rotate(-45deg) translate(10px, -10px);
+  }
 }
 
 /* HOME PAGE */
@@ -70,26 +183,23 @@ nav#nav-mobile {
   flex-direction: row;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .black-btn {
-  width: 7rem;
+  min-width: 7rem;
   min-height: 2rem;
   background-color: #000;
+  color: #fff;
   border-radius: 3px;
   text-decoration: none;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.black-btn .text {
   text-align: center;
-  color: #fff;
-  font-size: 15px;
-  font-family: Khmer MN;
-  font-weight: 400;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 /* Paralex 1 */
@@ -109,7 +219,7 @@ h1 {
 .heading {
   position: absolute;
   color: #fff;
-  font-size: 300%;
+  font-size: 5vh;
   top: 20%;
   width: 100%;
   text-transform: uppercase;
@@ -164,6 +274,10 @@ div#para4 div#beer-and-events div#go-beer {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 div#para4 div#beer-and-events div#go-events {
@@ -172,6 +286,10 @@ div#para4 div#beer-and-events div#go-events {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 div#para4 div#about-us {
@@ -229,7 +347,7 @@ div#beer-call-to-action a.black-btn{
 
 div.content-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
   grid-template-rows: auto auto;
   gap: 10px;
 }
@@ -262,7 +380,7 @@ div.bottom-image-container a.black-btn {
 /* EVENT PAGE */
 div.content-container-gallery {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(2fr 1fr));
   grid-template-rows: auto auto;
   gap: 1rem;
   margin: 5rem;
@@ -298,6 +416,9 @@ div.content-container-gallery-text div.gallery-item-text {
 
 div#bottom-content-about-us{
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mb-5 {
