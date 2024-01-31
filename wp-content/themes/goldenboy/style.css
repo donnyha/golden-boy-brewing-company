@@ -22,6 +22,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.center {
+  display: flex;
+  justify-content: center;}
+
 /* Navigation */
 nav#nav-desktop {
   display: flex;
@@ -299,6 +303,13 @@ div#bottom-content-about-us{
 .mb-5 {
   margin-bottom: 5rem;
 }
+
+.flex-space-evenly {
+  justify-content: space-evenly;
+}
+
+/* TAPROOM PAGE */
+
 
 /* Footer */
 footer {
