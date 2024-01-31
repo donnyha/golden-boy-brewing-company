@@ -51,12 +51,22 @@
     <!-- Map -->
     <?php 
       $location = get_field('location');
-      if( $location ): ?>
+      if( $location ): 
+        $address = '';
+        foreach( array('street_number', 'street_name', 'city', 'state', 'post_code', 'country') as $i => $k ) {
+            if( isset( $location[ $k ] ) ) {
+                $address .= sprintf( '<span class="segment-%s">%s</span>, ', $k, $location[ $k ] );
+            }
+        }
+
+        $address = trim( $address, ', ' );
+    ?>
         <div class="acf-map" data-zoom="<?= esc_attr($location['zoom'])?>">
             <div 
               class="marker" 
               data-lat="<?php echo esc_attr($location['lat']); ?>" 
-              data-lng="<?php echo esc_attr($location['lng']); ?>"
+              data-lng="<?php echo esc_attr($location['lng']); ?>" 
+              data-address="<?php echo esc_attr($address) ?>"
             ></div>
         </div>
     <?php endif; ?>
@@ -110,11 +120,36 @@
             lat: parseFloat( lat ),
             lng: parseFloat( lng )
         };
+        var address = $marker.data('address');
+        console.log($marker);
+        var contentString = '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Golden Boy Brewing Co</h1>' +
+          '<div id="bodyContent">' +
+          address +
+          "<br />" +
+          '<a href="https://www.google.com/maps/place/60+Osborne+St+N,+Winnipeg,+MB+R3C+1V3,+Canada/@49.8836106,-97.152064,17z/data=!3m1!4b1!4m6!3m5!1s0x52ea73fefa185a97:0x33114944f4a5a6b6!8m2!3d49.8836072!4d-97.1494891!16s%2Fg%2F11c24dwd2r?hl=en-US&entry=ttu" style="text-decoration: none; color: #0000FF" target="_blank">' +
+          "View on Google Maps" +
+          "</a>" +
+          "</div>" +
+          "</div>";
+
+        $marker.html(contentString);
 
         var marker = new google.maps.Marker({
             position : latLng,
-            map: map
+            map: map,
         });
+
+
+        marker.addListener("click", () => {
+          infowindow.open({
+            anchor: marker,
+            map,
+          });
+        });
+
 
         map.markers.push( marker );
 
