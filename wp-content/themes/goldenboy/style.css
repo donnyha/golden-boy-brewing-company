@@ -312,6 +312,24 @@ div#bottom-content-about-us{
 
 /* CONTACT US PAGE */
 
+/* CAREERS PAGE */
+div#careers-content {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+div#careers-content h2 {
+  margin-bottom: 3rem;
+}
+
+div#contact-form {
+  text-align: left;
+}
+
+.bg-black {
+  background-color: #000 !important;
+}
+
 /* Footer */
 footer {
   min-width: 100%;
