@@ -1,4 +1,8 @@
 <?php
+require_once ABSPATH . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(ABSPATH);
+$dotenv->load();
 
 function goldenboy_theme_support() {
   add_theme_support('title-tag');
@@ -33,3 +37,14 @@ function goldenboy_register_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'goldenboy_register_scripts');
+
+function goldenboy_enqueue_scripts() {
+  wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'goldenboy_enqueue_scripts');
+
+function my_acf_google_map_api( $api ){
+  $api['key'] = esc_attr($_ENV['GOOGLE_MAPS_API_KEY']);
+  return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
